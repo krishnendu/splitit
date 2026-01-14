@@ -1,6 +1,6 @@
 import { expensesService } from '../sheets/expensesService';
 import { balancesService } from '../sheets/balancesService';
-import type { Expense, Balance } from '../../types';
+import type { Balance } from '../../types';
 
 interface DebtGraph {
   [key: string]: {

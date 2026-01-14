@@ -3,11 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useAuth } from '../../contexts/AuthContext';
 import { authService } from '../../services/auth/authService';
 
-interface GoogleSignInProps {
-  clientId: string;
-}
-
-export const GoogleSignIn: React.FC<GoogleSignInProps> = ({ clientId }) => {
+export const GoogleSignIn: React.FC = () => {
   const { login } = useAuth();
 
   const handleSuccess = async (response: any) => {

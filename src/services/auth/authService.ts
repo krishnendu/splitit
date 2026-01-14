@@ -1,7 +1,6 @@
-import { GoogleLogin, CredentialResponse } from '@react-oauth/google';
+import { CredentialResponse } from '@react-oauth/google';
 import { storage } from '../../utils/storage';
 import { STORAGE_KEYS } from '../../constants/config';
-import type { User } from '../../types';
 
 export interface GoogleProfile {
   email: string;

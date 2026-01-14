@@ -4,11 +4,7 @@ import { NotificationItem } from './NotificationItem';
 import { Button } from '../common/Button';
 import { LoadingSpinner } from '../layout/LoadingSpinner';
 
-interface ActivityFeedProps {
-  onClose?: () => void;
-}
-
-export const ActivityFeed: React.FC<ActivityFeedProps> = ({ onClose }) => {
+export const ActivityFeed: React.FC = () => {
   const { notifications, isLoading, markAllAsRead, unreadCount } = useNotifications();
 
   if (isLoading) {

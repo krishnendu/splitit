@@ -24,8 +24,8 @@ class BackupService {
     ]);
 
     // Get user preferences
-    const userPreferences = storage.get(STORAGE_KEYS.USER_PREFERENCES) || {};
-    const appConfig = storage.get(STORAGE_KEYS.APP_CONFIG) || {};
+    const userPreferences = storage.get<Record<string, unknown>>(STORAGE_KEYS.USER_PREFERENCES) || {};
+    const appConfig = storage.get<Record<string, unknown>>(STORAGE_KEYS.APP_CONFIG) || {};
 
     // Create backup metadata
     const backupMetadata = {

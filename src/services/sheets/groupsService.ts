@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, GROUPS_HEADERS } from '../../constants/sheetSchemas';
-import type { Group, GroupRow } from '../../types';
+import type { Group } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class GroupsService {

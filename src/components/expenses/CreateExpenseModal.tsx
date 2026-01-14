@@ -9,7 +9,7 @@ import { Button } from '../common/Button';
 import { EXPENSE_CATEGORIES } from '../../constants/categories';
 import { DEFAULTS } from '../../constants/config';
 import { getCurrentTimestamp } from '../../utils/date';
-import type { Expense, ExpenseSplit } from '../../types';
+import type { ExpenseSplit } from '../../types';
 
 interface CreateExpenseModalProps {
   isOpen: boolean;
@@ -30,7 +30,7 @@ export const CreateExpenseModal: React.FC<CreateExpenseModalProps> = ({
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState(getCurrentTimestamp());
   const [paidBy, setPaidBy] = useState(group?.members[0] || '');
-  const [category, setCategory] = useState(DEFAULTS.CATEGORY);
+  const [category, setCategory] = useState<string>(DEFAULTS.CATEGORY);
   const [notes, setNotes] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 

@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, COMMENTS_HEADERS } from '../../constants/sheetSchemas';
-import type { Comment, CommentRow } from '../../types';
+import type { Comment } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class CommentsService {

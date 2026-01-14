@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { storage } from '../../utils/storage';
 import { STORAGE_KEYS } from '../../constants/config';
+import type { UserPreferences } from '../../types';
 import { BackupNow } from './BackupNow';
 import { BackupHistory } from './BackupHistory';
 import { RestoreModal } from './RestoreModal';
@@ -8,15 +9,16 @@ import { Button } from '../common/Button';
 
 export const BackupSettings: React.FC = () => {
   const [isRestoreModalOpen, setIsRestoreModalOpen] = useState(false);
+  const storedPreferences = storage.get<UserPreferences>(STORAGE_KEYS.USER_PREFERENCES);
   const [autoBackupEnabled, setAutoBackupEnabled] = useState(
-    storage.get(STORAGE_KEYS.USER_PREFERENCES)?.autoBackupEnabled ?? false
+    storedPreferences?.autoBackupEnabled ?? false
   );
-  const [backupFrequency, setBackupFrequency] = useState(
-    storage.get(STORAGE_KEYS.USER_PREFERENCES)?.backupFrequency ?? 'weekly'
+  const [backupFrequency, setBackupFrequency] = useState<'daily' | 'weekly' | 'monthly'>(
+    storedPreferences?.backupFrequency ?? 'weekly'
   );
 
   const handleSavePreferences = () => {
-    const preferences = storage.get(STORAGE_KEYS.USER_PREFERENCES) || {};
+    const preferences = storage.get<UserPreferences>(STORAGE_KEYS.USER_PREFERENCES) || {};
     storage.set(STORAGE_KEYS.USER_PREFERENCES, {
       ...preferences,
       autoBackupEnabled,
@@ -52,7 +54,7 @@ export const BackupSettings: React.FC = () => {
               <label className="block text-sm font-medium mb-2">Frequency</label>
               <select
                 value={backupFrequency}
-                onChange={(e) => setBackupFrequency(e.target.value)}
+                onChange={(e) => setBackupFrequency(e.target.value as 'daily' | 'weekly' | 'monthly')}
                 className="input"
               >
                 <option value="daily">Daily</option>

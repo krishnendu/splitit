@@ -5,7 +5,7 @@ import { LoadingSpinner } from '../layout/LoadingSpinner';
 
 export const OverallBalance: React.FC = () => {
   const { user } = useAuth();
-  const { balances, isLoading, getBalancesByUser } = useBalances();
+  const { isLoading, getBalancesByUser } = useBalances();
 
   if (isLoading) {
     return <LoadingSpinner />;

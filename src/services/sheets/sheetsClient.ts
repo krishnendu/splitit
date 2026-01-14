@@ -1,7 +1,7 @@
 import { gapi } from 'gapi-script';
 import { STORAGE_KEYS, SHEETS_API_CONFIG, API_LIMITS } from '../../constants/config';
 import { storage } from '../../utils/storage';
-import type { SheetsApiResponse, SheetsBatchUpdateResponse } from '../../types';
+import type { SheetsBatchUpdateResponse } from '../../types';
 
 export interface SheetsClientConfig {
   apiKey?: string;
@@ -14,8 +14,6 @@ class SheetsClient {
   private sheetId: string | null = null;
   private accessToken: string | null = null;
   private gapiInitialized = false;
-  private requestQueue: Array<() => Promise<unknown>> = [];
-  private isProcessingQueue = false;
 
   async initialize(config: SheetsClientConfig): Promise<void> {
     this.apiKey = config.apiKey || storage.get<string>(STORAGE_KEYS.API_KEY) || null;

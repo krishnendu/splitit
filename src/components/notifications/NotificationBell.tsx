@@ -39,7 +39,7 @@ export const NotificationBell: React.FC = () => {
             onClick={() => setIsOpen(false)}
           />
           <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg z-20">
-            <ActivityFeed onClose={() => setIsOpen(false)} />
+            <ActivityFeed />
           </div>
         </>
       )}

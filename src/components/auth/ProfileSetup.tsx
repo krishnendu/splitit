@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { usersService } from '../../services/sheets/usersService';
 import { DEFAULTS } from '../../constants/config';
-import type { User } from '../../types';
 
 interface ProfileSetupProps {
   onComplete: () => void;
@@ -10,8 +9,8 @@ interface ProfileSetupProps {
 
 export const ProfileSetup: React.FC<ProfileSetupProps> = ({ onComplete }) => {
   const { user } = useAuth();
-  const [currency, setCurrency] = useState(DEFAULTS.CURRENCY);
-  const [timezone, setTimezone] = useState(DEFAULTS.TIMEZONE);
+  const [currency, setCurrency] = useState<string>(DEFAULTS.CURRENCY);
+  const [timezone, setTimezone] = useState<string>(DEFAULTS.TIMEZONE);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {

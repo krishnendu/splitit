@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, BALANCES_HEADERS } from '../../constants/sheetSchemas';
-import type { Balance, BalanceRow } from '../../types';
+import type { Balance } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class BalancesService {
@@ -110,7 +110,8 @@ class BalancesService {
     );
 
     if (existing) {
-      return this.update(existing.balance_id, { amount, updated_at: new Date().toISOString() }) || existing;
+      const updated = await this.update(existing.balance_id, { amount, updated_at: new Date().toISOString() });
+      return updated ?? existing;
     }
 
     return this.create({

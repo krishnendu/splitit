@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, EXPENSES_HEADERS } from '../../constants/sheetSchemas';
-import type { Expense, ExpenseSplit, ExpenseRow } from '../../types';
+import type { Expense, ExpenseSplit } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class ExpensesService {

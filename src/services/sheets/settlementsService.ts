@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, SETTLEMENTS_HEADERS } from '../../constants/sheetSchemas';
-import type { Settlement, SettlementRow } from '../../types';
+import type { Settlement } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class SettlementsService {

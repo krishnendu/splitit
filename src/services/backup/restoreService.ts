@@ -3,8 +3,6 @@ import { groupsService } from '../sheets/groupsService';
 import { expensesService } from '../sheets/expensesService';
 import { balancesService } from '../sheets/balancesService';
 import { settlementsService } from '../sheets/settlementsService';
-import { commentsService } from '../sheets/commentsService';
-import { notificationsService } from '../sheets/notificationsService';
 import { backupService } from './backupService';
 import type { BackupFile } from '../../types';
 

@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, USERS_HEADERS } from '../../constants/sheetSchemas';
-import type { User, UserRow } from '../../types';
+import type { User } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class UsersService {

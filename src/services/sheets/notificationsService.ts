@@ -1,6 +1,6 @@
 import { sheetsClient } from './sheetsClient';
 import { SHEET_NAMES, NOTIFICATIONS_HEADERS } from '../../constants/sheetSchemas';
-import type { Notification, NotificationType, NotificationRow } from '../../types';
+import type { Notification, NotificationType } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 
 class NotificationsService {

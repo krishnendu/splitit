@@ -10,7 +10,7 @@ import type { Balance } from '../../types';
 
 export const BalanceList: React.FC = () => {
   const { id: groupId } = useParams<{ id: string }>();
-  const { balances, isLoading, calculateBalances, getBalancesByGroup } = useBalances();
+  const { isLoading, calculateBalances, getBalancesByGroup } = useBalances();
   const { expenses } = useExpenses();
   const [settlingBalance, setSettlingBalance] = useState<Balance | null>(null);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ErrorBoundary } from './components/layout/ErrorBoundary';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { GroupProvider } from './contexts/GroupContext';
 import { ExpenseProvider } from './contexts/ExpenseContext';
 import { BalanceProvider } from './contexts/BalanceContext';
@@ -23,6 +23,7 @@ import { BackupSettings } from './components/backup/BackupSettings';
 import { InstallPrompt } from './components/common/InstallPrompt';
 import { storage } from './utils/storage';
 import { STORAGE_KEYS } from './constants/config';
+import type { AppConfig } from './types';
 
 // Get OAuth client ID from storage
 const getOAuthClientId = () => {
@@ -50,7 +51,7 @@ const LoginPage: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-md w-full card">
           <h1 className="text-3xl font-bold text-center mb-6">Welcome to SplitIt</h1>
-          <GoogleSignIn clientId={clientId} />
+          <GoogleSignIn />
         </div>
       </div>
     </GoogleOAuthProvider>
@@ -58,7 +59,7 @@ const LoginPage: React.FC = () => {
 };
 
 const OnboardingCheck: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const config = storage.get(STORAGE_KEYS.APP_CONFIG);
+  const config = storage.get<AppConfig>(STORAGE_KEYS.APP_CONFIG);
   const isInitialized = config?.initialized;
 
   if (!isInitialized) {
