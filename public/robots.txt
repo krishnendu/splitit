@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krishnendu.github.io/splitit/sitemap.xml
