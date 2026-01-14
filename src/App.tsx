@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ErrorBoundary } from './components/layout/ErrorBoundary';
 import { AuthProvider } from './contexts/AuthContext';
@@ -38,9 +38,9 @@ const LoginPage: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-gray-600 mb-4">OAuth Client ID not configured</p>
-          <a href="/onboarding" className="text-primary-600 hover:underline">
+          <Link to="/onboarding" className="text-primary-600 hover:underline">
             Go to Setup
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -78,15 +78,15 @@ const Dashboard: React.FC = () => {
         <div className="card">
           <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
           <div className="space-y-2">
-            <a href="/groups" className="block text-primary-600 hover:underline">
+            <Link to="/groups" className="block text-primary-600 hover:underline">
               View Groups →
-            </a>
-            <a href="/reports" className="block text-primary-600 hover:underline">
+            </Link>
+            <Link to="/reports" className="block text-primary-600 hover:underline">
               View Reports →
-            </a>
-            <a href="/settings" className="block text-primary-600 hover:underline">
+            </Link>
+            <Link to="/settings" className="block text-primary-600 hover:underline">
               Backup Settings →
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -13,6 +13,15 @@
     <link rel="manifest" href="/manifest.json" />
     <title>SplitIt - Split Expenses Easily</title>
     <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      (function () {
+        const redirect = sessionStorage.getItem('spa-redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa-redirect');
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
