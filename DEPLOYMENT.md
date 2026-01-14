@@ -33,7 +33,7 @@ The repository includes a GitHub Actions workflow that automatically deploys to 
 This will:
 - Build the app with the correct base path
 - Deploy to the `gh-pages` branch
-- Make it available at `https://YOUR_USERNAME.github.io/splitit`
+- Make it available at `https://krishnendu.github.io/splitit`
 
 ## 📱 PWA Configuration
 

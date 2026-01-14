@@ -50,6 +50,8 @@ npm run dev
 5. Create OAuth 2.0 credentials
 6. Create API Key for Sheets API
 
+See the detailed walkthrough in [`GOOGLE_CLOUD_SETUP.md`](/Users/krish/my_projects/splitit/GOOGLE_CLOUD_SETUP.md).
+
 ### Configuration
 
 1. Get your Google Sheet ID from the URL:

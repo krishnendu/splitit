@@ -18,8 +18,8 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
-        scope: './',
-        start_url: './',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: '/icon-192x192.png',
@@ -107,17 +107,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: process.env.GITHUB_PAGES === 'true' ? '/splitit/' : '/',
+  base: '/',
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild', // Changed from terser to esbuild (faster, built-in)
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    },
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
